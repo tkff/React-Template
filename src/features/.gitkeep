@@ -1,0 +1,7 @@
+# Feature modules directory
+# Each feature should contain:
+# - api/ - API calls and React Query hooks
+# - ui/ - Feature-specific components
+# - model/ - Types and business logic
+# - hooks/ - Custom hooks
+
