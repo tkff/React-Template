@@ -45,3 +45,6 @@ coverage
 # Bundle analyzer
 stats.html
 
+# Convex (generated files)
+convex/_generated/
+

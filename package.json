@@ -20,6 +20,8 @@
     "storybook:build": "node scripts/check-optional.js @storybook/react-vite && storybook build",
     "e2e": "node scripts/check-optional.js @playwright/test && playwright test",
     "e2e:ui": "node scripts/check-optional.js @playwright/test && playwright test --ui",
+    "convex:dev": "node scripts/check-optional.js convex && convex dev",
+    "convex:deploy": "node scripts/check-optional.js convex && convex deploy",
     "prepare": "node scripts/prepare.js"
   },
   "dependencies": {

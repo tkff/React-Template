@@ -161,6 +161,17 @@ pnpm add -D @storybook/react-vite @storybook/addon-essentials @storybook/addon-i
 pnpm storybook
 ```
 
+### Convex (Backend-as-a-Service)
+
+Real-time database with serverless functions.
+
+```bash
+pnpm add convex
+pnpm convex:dev
+```
+
+This will prompt you to log in and create a Convex project. The `convex/` directory contains example schema and functions. See `convex/README.md` for usage details.
+
 ## Environment Variables
 
 Create a `.env` file (optional) for environment-specific settings:
@@ -168,6 +179,9 @@ Create a `.env` file (optional) for environment-specific settings:
 ```env
 # API base URL (defaults to /api if not set)
 VITE_API_BASE_URL=https://api.example.com
+
+# Convex (set automatically by `npx convex dev`)
+# VITE_CONVEX_URL=https://your-project.convex.cloud
 ```
 
 All variables must be prefixed with `VITE_` to be exposed to the client.

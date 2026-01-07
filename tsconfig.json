@@ -31,5 +31,10 @@
     "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
   "include": ["src", "vite.config.ts"],
-  "exclude": ["src/**/*.stories.tsx", "src/**/*.stories.ts"]
+  "exclude": [
+    "src/**/*.stories.tsx",
+    "src/**/*.stories.ts",
+    "src/app/providers/convex-provider.tsx",
+    "convex/**/*"
+  ]
 }
