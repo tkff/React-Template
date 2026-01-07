@@ -1,13 +1,16 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { cn } from '@/shared/lib';
-
-const navLinks = [
-  { to: '/', label: 'Home' },
-  { to: '/form', label: 'Form Example' },
-];
+import { LanguageSwitcher } from '@/shared/ui/components/LanguageSwitcher';
 
 export function MainLayout() {
   const location = useLocation();
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { to: '/', label: t('nav.home') },
+    { to: '/form', label: t('nav.form') },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -17,7 +20,7 @@ export function MainLayout() {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-8">
               <Link to="/" className="text-xl font-bold text-primary-600">
-                React Template
+                {t('common.appName')}
               </Link>
               <nav className="hidden md:flex md:gap-6">
                 {navLinks.map((link) => (
@@ -36,6 +39,7 @@ export function MainLayout() {
                 ))}
               </nav>
             </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </header>
@@ -49,7 +53,7 @@ export function MainLayout() {
       <footer className="border-t border-gray-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <p className="text-center text-sm text-gray-500">
-            React Web Template — Built with Vite, React, TypeScript
+            {t('common.appName')} — {t('footer.builtWith')}
           </p>
         </div>
       </footer>

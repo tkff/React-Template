@@ -1,0 +1,86 @@
+{
+  "common": {
+    "appName": "React Template",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "reset": "Reset",
+    "back": "Back",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "home": "Home",
+    "form": "Form Example"
+  },
+  "home": {
+    "title": "React Web Template",
+    "subtitle": "A production-ready template with React, TypeScript, Vite, and more.",
+    "tryForm": "Try Form Example",
+    "fetchUser": "Fetch Random User",
+    "queryDemo": "React Query Demo",
+    "storeDemo": "Zustand Store Demo",
+    "currentTheme": "Current theme preference:",
+    "themePersisted": "This preference is persisted in localStorage via Zustand middleware.",
+    "technologies": "Included Technologies",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "form": {
+    "title": "Form Example",
+    "subtitle": "This form demonstrates React Hook Form with Zod validation.",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "email": "Email Address",
+    "emailPlaceholder": "john@example.com",
+    "age": "Age (optional)",
+    "agePlaceholder": "25",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "passwordHint": "Must contain uppercase, lowercase, and number",
+    "confirmPassword": "Confirm Password",
+    "terms": "I accept the terms and conditions",
+    "success": "Form Submitted Successfully!"
+  },
+  "validation": {
+    "nameMin": "Name must be at least 2 characters",
+    "nameMax": "Name must be less than 50 characters",
+    "emailInvalid": "Please enter a valid email address",
+    "ageMin": "You must be at least 18 years old",
+    "ageMax": "Please enter a valid age",
+    "ageNumber": "Age must be a number",
+    "passwordMin": "Password must be at least 8 characters",
+    "passwordUppercase": "Password must contain at least one uppercase letter",
+    "passwordLowercase": "Password must contain at least one lowercase letter",
+    "passwordNumber": "Password must contain at least one number",
+    "passwordMismatch": "Passwords do not match",
+    "termsRequired": "You must accept the terms and conditions"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Go back home"
+  },
+  "footer": {
+    "builtWith": "Built with Vite, React, TypeScript"
+  },
+  "tech": {
+    "vite": "Fast build tool with HMR",
+    "react": "UI library with concurrent features",
+    "typescript": "Type-safe JavaScript",
+    "router": "Client-side routing",
+    "query": "Server state management",
+    "hookForm": "Performant form handling",
+    "zod": "Schema validation",
+    "zustand": "Lightweight state management",
+    "tailwind": "Utility-first styling",
+    "axios": "HTTP client",
+    "vitest": "Unit testing framework",
+    "eslint": "Code quality & formatting"
+  }
+}

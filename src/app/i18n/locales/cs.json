@@ -1,0 +1,86 @@
+{
+  "common": {
+    "appName": "React Šablona",
+    "loading": "Načítání...",
+    "error": "Došlo k chybě",
+    "save": "Uložit",
+    "cancel": "Zrušit",
+    "submit": "Odeslat",
+    "reset": "Resetovat",
+    "back": "Zpět",
+    "next": "Další",
+    "yes": "Ano",
+    "no": "Ne"
+  },
+  "nav": {
+    "home": "Domů",
+    "form": "Příklad formuláře"
+  },
+  "home": {
+    "title": "React Web Šablona",
+    "subtitle": "Produkčně připravená šablona s React, TypeScript, Vite a dalšími.",
+    "tryForm": "Vyzkoušet formulář",
+    "fetchUser": "Načíst náhodného uživatele",
+    "queryDemo": "React Query Demo",
+    "storeDemo": "Zustand Store Demo",
+    "currentTheme": "Aktuální téma:",
+    "themePersisted": "Tato preference je uložena v localStorage přes Zustand middleware.",
+    "technologies": "Použité technologie",
+    "light": "Světlý",
+    "dark": "Tmavý",
+    "system": "Systém"
+  },
+  "form": {
+    "title": "Příklad formuláře",
+    "subtitle": "Tento formulář demonstruje React Hook Form se Zod validací.",
+    "fullName": "Celé jméno",
+    "fullNamePlaceholder": "Jan Novák",
+    "email": "E-mailová adresa",
+    "emailPlaceholder": "jan@example.com",
+    "age": "Věk (nepovinné)",
+    "agePlaceholder": "25",
+    "password": "Heslo",
+    "passwordPlaceholder": "••••••••",
+    "passwordHint": "Musí obsahovat velké písmeno, malé písmeno a číslici",
+    "confirmPassword": "Potvrzení hesla",
+    "terms": "Souhlasím s podmínkami",
+    "success": "Formulář byl úspěšně odeslán!"
+  },
+  "validation": {
+    "nameMin": "Jméno musí mít alespoň 2 znaky",
+    "nameMax": "Jméno nesmí být delší než 50 znaků",
+    "emailInvalid": "Zadejte platnou e-mailovou adresu",
+    "ageMin": "Musíte být starší 18 let",
+    "ageMax": "Zadejte platný věk",
+    "ageNumber": "Věk musí být číslo",
+    "passwordMin": "Heslo musí mít alespoň 8 znaků",
+    "passwordUppercase": "Heslo musí obsahovat alespoň jedno velké písmeno",
+    "passwordLowercase": "Heslo musí obsahovat alespoň jedno malé písmeno",
+    "passwordNumber": "Heslo musí obsahovat alespoň jednu číslici",
+    "passwordMismatch": "Hesla se neshodují",
+    "termsRequired": "Musíte souhlasit s podmínkami"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Stránka nenalezena",
+    "description": "Stránka, kterou hledáte, neexistuje nebo byla přesunuta.",
+    "backHome": "Zpět na hlavní stránku"
+  },
+  "footer": {
+    "builtWith": "Vytvořeno pomocí Vite, React, TypeScript"
+  },
+  "tech": {
+    "vite": "Rychlý build nástroj s HMR",
+    "react": "UI knihovna s concurrent features",
+    "typescript": "Typově bezpečný JavaScript",
+    "router": "Klientské směrování",
+    "query": "Správa stavu serveru",
+    "hookForm": "Výkonné zpracování formulářů",
+    "zod": "Validace schémat",
+    "zustand": "Lehká správa stavu",
+    "tailwind": "Utility-first stylování",
+    "axios": "HTTP klient",
+    "vitest": "Unit testovací framework",
+    "eslint": "Kvalita kódu a formátování"
+  }
+}

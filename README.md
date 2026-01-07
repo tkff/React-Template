@@ -57,6 +57,10 @@ pnpm preview
 
 - **Zustand** - Lightweight state management
 
+### Internationalization
+
+- **react-i18next** - Multi-language support with auto-detection
+
 ### Styling
 
 - **Tailwind CSS** - Utility-first CSS framework
@@ -76,6 +80,9 @@ pnpm preview
 ```
 src/
 ├── app/                    # Application setup
+│   ├── i18n/               # Internationalization config
+│   │   ├── locales/        # Translation files (en.json, cs.json, ...)
+│   │   └── index.ts        # i18n setup
 │   ├── providers/          # React Query, Router providers
 │   ├── routes/             # Route definitions
 │   ├── store/              # Global Zustand stores
@@ -117,6 +124,48 @@ Use `@/` to import from the `src` directory:
 ```tsx
 import { Button } from '@/shared/ui';
 import { useUIStore } from '@/app/store/ui-store';
+```
+
+## Internationalization (i18n)
+
+The template includes multi-language support with `react-i18next`:
+
+- **Auto-detection**: Detects browser language on first visit
+- **Persistence**: Saves language preference in localStorage
+- **Included languages**: English (en), Czech (cs)
+
+### Adding a New Language
+
+1. Create a new translation file in `src/app/i18n/locales/` (e.g., `de.json`)
+2. Copy the structure from `en.json` and translate the values
+3. Register the language in `src/app/i18n/index.ts`:
+
+```ts
+import de from './locales/de.json';
+
+export const resources = {
+  en: { translation: en },
+  cs: { translation: cs },
+  de: { translation: de }, // Add new language
+} as const;
+
+export const supportedLanguages = [
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'cs', name: 'Čeština', flag: '🇨🇿' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' }, // Add to switcher
+] as const;
+```
+
+### Using Translations
+
+```tsx
+import { useTranslation } from 'react-i18next';
+
+function MyComponent() {
+  const { t } = useTranslation();
+
+  return <h1>{t('home.title')}</h1>;
+}
 ```
 
 ## Optional Tools

@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui';
 
 export function NotFoundPage() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center text-center">
-      <h1 className="text-6xl font-bold text-gray-900">404</h1>
-      <p className="mt-4 text-xl text-gray-600">Page not found</p>
-      <p className="mt-2 text-gray-500">
-        The page you're looking for doesn't exist or has been moved.
-      </p>
+      <h1 className="text-6xl font-bold text-gray-900">{t('notFound.title')}</h1>
+      <p className="mt-4 text-xl text-gray-600">{t('notFound.message')}</p>
+      <p className="mt-2 text-gray-500">{t('notFound.description')}</p>
       <Link to="/" className="mt-8">
-        <Button>Go back home</Button>
+        <Button>{t('notFound.backHome')}</Button>
       </Link>
     </div>
   );

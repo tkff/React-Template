@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui';
 import { useUIStore } from '@/app/store/ui-store';
 
@@ -11,6 +12,7 @@ async function fetchRandomUser() {
 }
 
 export function HomePage() {
+  const { t } = useTranslation();
   const theme = useUIStore((state) => state.theme);
   const setTheme = useUIStore((state) => state.setTheme);
 
@@ -22,22 +24,35 @@ export function HomePage() {
 
   const user = data?.results?.[0];
 
+  const technologies = [
+    { name: 'Vite', desc: t('tech.vite') },
+    { name: 'React 18', desc: t('tech.react') },
+    { name: 'TypeScript', desc: t('tech.typescript') },
+    { name: 'React Router', desc: t('tech.router') },
+    { name: 'TanStack Query', desc: t('tech.query') },
+    { name: 'React Hook Form', desc: t('tech.hookForm') },
+    { name: 'Zod', desc: t('tech.zod') },
+    { name: 'Zustand', desc: t('tech.zustand') },
+    { name: 'Tailwind CSS', desc: t('tech.tailwind') },
+    { name: 'Axios', desc: t('tech.axios') },
+    { name: 'Vitest', desc: t('tech.vitest') },
+    { name: 'ESLint + Prettier', desc: t('tech.eslint') },
+  ];
+
   return (
     <div className="space-y-8">
       {/* Hero Section */}
       <section className="text-center">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-          React Web Template
+          {t('home.title')}
         </h1>
-        <p className="mt-4 text-lg text-gray-600">
-          A production-ready template with React, TypeScript, Vite, and more.
-        </p>
+        <p className="mt-4 text-lg text-gray-600">{t('home.subtitle')}</p>
         <div className="mt-8 flex justify-center gap-4">
           <Link to="/form">
-            <Button>Try Form Example</Button>
+            <Button>{t('home.tryForm')}</Button>
           </Link>
           <Button variant="outline" onClick={() => refetch()}>
-            {isLoading ? 'Loading...' : 'Fetch Random User'}
+            {isLoading ? t('common.loading') : t('home.fetchUser')}
           </Button>
         </div>
       </section>
@@ -45,9 +60,11 @@ export function HomePage() {
       {/* React Query Demo */}
       {(user || error) && (
         <section className="card mx-auto max-w-md">
-          <h2 className="mb-4 text-lg font-semibold">React Query Demo</h2>
+          <h2 className="mb-4 text-lg font-semibold">{t('home.queryDemo')}</h2>
           {error ? (
-            <p className="text-red-600">Error: {(error as Error).message}</p>
+            <p className="text-red-600">
+              {t('common.error')}: {(error as Error).message}
+            </p>
           ) : user ? (
             <div className="flex items-center gap-4">
               <img
@@ -69,45 +86,30 @@ export function HomePage() {
 
       {/* Zustand Demo */}
       <section className="card mx-auto max-w-md">
-        <h2 className="mb-4 text-lg font-semibold">Zustand Store Demo</h2>
+        <h2 className="mb-4 text-lg font-semibold">{t('home.storeDemo')}</h2>
         <p className="mb-4 text-sm text-gray-600">
-          Current theme preference: <strong>{theme}</strong>
+          {t('home.currentTheme')} <strong>{t(`home.${theme}`)}</strong>
         </p>
         <div className="flex gap-2">
-          {(['light', 'dark', 'system'] as const).map((t) => (
+          {(['light', 'dark', 'system'] as const).map((themeOption) => (
             <Button
-              key={t}
-              variant={theme === t ? 'primary' : 'outline'}
+              key={themeOption}
+              variant={theme === themeOption ? 'primary' : 'outline'}
               size="sm"
-              onClick={() => setTheme(t)}
+              onClick={() => setTheme(themeOption)}
             >
-              {t.charAt(0).toUpperCase() + t.slice(1)}
+              {t(`home.${themeOption}`)}
             </Button>
           ))}
         </div>
-        <p className="mt-3 text-xs text-gray-500">
-          This preference is persisted in localStorage via Zustand middleware.
-        </p>
+        <p className="mt-3 text-xs text-gray-500">{t('home.themePersisted')}</p>
       </section>
 
       {/* Features Grid */}
       <section>
-        <h2 className="mb-6 text-center text-2xl font-bold">Included Technologies</h2>
+        <h2 className="mb-6 text-center text-2xl font-bold">{t('home.technologies')}</h2>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            { name: 'Vite', desc: 'Fast build tool with HMR' },
-            { name: 'React 18', desc: 'UI library with concurrent features' },
-            { name: 'TypeScript', desc: 'Type-safe JavaScript' },
-            { name: 'React Router', desc: 'Client-side routing' },
-            { name: 'TanStack Query', desc: 'Server state management' },
-            { name: 'React Hook Form', desc: 'Performant form handling' },
-            { name: 'Zod', desc: 'Schema validation' },
-            { name: 'Zustand', desc: 'Lightweight state management' },
-            { name: 'Tailwind CSS', desc: 'Utility-first styling' },
-            { name: 'Axios', desc: 'HTTP client' },
-            { name: 'Vitest', desc: 'Unit testing framework' },
-            { name: 'ESLint + Prettier', desc: 'Code quality & formatting' },
-          ].map((tech) => (
+          {technologies.map((tech) => (
             <div key={tech.name} className="card">
               <h3 className="font-semibold text-gray-900">{tech.name}</h3>
               <p className="mt-1 text-sm text-gray-600">{tech.desc}</p>
