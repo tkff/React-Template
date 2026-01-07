@@ -88,6 +88,17 @@
     "tailwind": "Utility-first stylování",
     "axios": "HTTP klient",
     "vitest": "Unit testovací framework",
-    "eslint": "Kvalita kódu a formátování"
+    "eslint": "Kvalita kódu a formátování",
+    "i18n": "Podpora více jazyků"
+  },
+  "optional": {
+    "title": "Volitelné nástroje (připravené)",
+    "subtitle": "Připravené k aktivaci dle potřeby",
+    "sentry": "Sledování chyb a monitoring",
+    "convex": "Real-time backend služba",
+    "playwright": "E2E testování v prohlížeči",
+    "storybook": "Vývoj UI komponent",
+    "husky": "Git hooky a linting commitů",
+    "analyzer": "Analýza velikosti bundlu"
   }
 }
