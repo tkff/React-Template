@@ -66,13 +66,6 @@
     "description": "The page you're looking for doesn't exist or has been moved.",
     "backHome": "Go back home"
   },
-  "error": {
-    "title": "Oops!",
-    "message": "Something went wrong. Please try again.",
-    "details": "Error details",
-    "tryAgain": "Try again",
-    "goHome": "Go to homepage"
-  },
   "footer": {
     "builtWith": "Built with Vite, React, TypeScript"
   },
@@ -88,17 +81,6 @@
     "tailwind": "Utility-first styling",
     "axios": "HTTP client",
     "vitest": "Unit testing framework",
-    "eslint": "Code quality & formatting",
-    "i18n": "Multi-language support"
-  },
-  "optional": {
-    "title": "Optional Tools (Scaffolded)",
-    "subtitle": "Ready to enable when needed",
-    "sentry": "Error tracking & monitoring",
-    "convex": "Real-time backend service",
-    "playwright": "E2E browser testing",
-    "storybook": "UI component development",
-    "husky": "Git hooks & commit linting",
-    "analyzer": "Bundle size analysis"
+    "eslint": "Code quality & formatting"
   }
 }

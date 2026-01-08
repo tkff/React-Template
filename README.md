@@ -221,23 +221,6 @@ pnpm convex:dev
 
 This will prompt you to log in and create a Convex project. The `convex/` directory contains example schema and functions. See `convex/README.md` for usage details.
 
-### Sentry (Error Tracking)
-
-Sentry is pre-configured and ready to use. Just add your DSN:
-
-```bash
-# Add to .env
-VITE_SENTRY_DSN=https://your-dsn@sentry.io/project-id
-```
-
-Features included:
-
-- Automatic error capturing with ErrorBoundary
-- Performance monitoring (10% sample rate)
-- Filtered noisy errors (network failures, extensions, etc.)
-- Development mode logging (errors shown in console, not sent)
-- Helper functions: `captureError()`, `captureMessage()`, `setUser()`
-
 ## Environment Variables
 
 Create a `.env` file (optional) for environment-specific settings:
@@ -248,9 +231,6 @@ VITE_API_BASE_URL=https://api.example.com
 
 # Convex (set automatically by `npx convex dev`)
 # VITE_CONVEX_URL=https://your-project.convex.cloud
-
-# Sentry error tracking
-# VITE_SENTRY_DSN=https://your-dsn@sentry.io/project-id
 ```
 
 All variables must be prefixed with `VITE_` to be exposed to the client.

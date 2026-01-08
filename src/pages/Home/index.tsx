@@ -37,20 +37,10 @@ export function HomePage() {
     { name: 'Axios', desc: t('tech.axios') },
     { name: 'Vitest', desc: t('tech.vitest') },
     { name: 'ESLint + Prettier', desc: t('tech.eslint') },
-    { name: 'i18next', desc: t('tech.i18n') },
-  ];
-
-  const optionalTools = [
-    { name: 'Sentry', desc: t('optional.sentry'), icon: '🛡️' },
-    { name: 'Convex', desc: t('optional.convex'), icon: '⚡' },
-    { name: 'Playwright', desc: t('optional.playwright'), icon: '🎭' },
-    { name: 'Storybook', desc: t('optional.storybook'), icon: '📖' },
-    { name: 'Husky + Commitlint', desc: t('optional.husky'), icon: '🐶' },
-    { name: 'Bundle Analyzer', desc: t('optional.analyzer'), icon: '📊' },
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8">
       {/* Hero Section */}
       <section className="text-center">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
@@ -115,40 +105,14 @@ export function HomePage() {
         <p className="mt-3 text-xs text-gray-500">{t('home.themePersisted')}</p>
       </section>
 
-      {/* Core Technologies Grid */}
+      {/* Features Grid */}
       <section>
         <h2 className="mb-6 text-center text-2xl font-bold">{t('home.technologies')}</h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {technologies.map((tech) => (
             <div key={tech.name} className="card">
               <h3 className="font-semibold text-gray-900">{tech.name}</h3>
               <p className="mt-1 text-sm text-gray-600">{tech.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Optional Tools Section */}
-      <section>
-        <div className="mb-6 text-center">
-          <h2 className="text-2xl font-bold">{t('optional.title')}</h2>
-          <p className="mt-2 text-gray-600">{t('optional.subtitle')}</p>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {optionalTools.map((tool) => (
-            <div
-              key={tool.name}
-              className="card border-dashed border-gray-300 bg-gray-50/50 transition-colors hover:border-primary-300 hover:bg-white"
-            >
-              <div className="flex items-start gap-3">
-                <span className="text-2xl" role="img" aria-hidden="true">
-                  {tool.icon}
-                </span>
-                <div>
-                  <h3 className="font-semibold text-gray-900">{tool.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{tool.desc}</p>
-                </div>
-              </div>
             </div>
           ))}
         </div>
